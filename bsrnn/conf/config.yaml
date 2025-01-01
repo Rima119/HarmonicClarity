@@ -1,0 +1,52 @@
+# Defaults
+defaults:
+  - _self_
+  - dset: musdb18hq_sad
+  - optim: default
+  - scheduler: step
+  - eval: default
+  - src_mod: bsrnn
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+
+# Targets to separate (for preprocessing / evaluation / inference)
+targets:
+  - vocals
+  - bass
+  - drums
+  - other
+
+# General parameters
+seed: 42
+eps: 1e-7
+out_dir: outputs/
+tblog_dir: tb_logs/
+data_dir: data/musdb18hq/
+
+# Audio / STFT
+sample_rate: 44100
+n_fft: 2048
+n_hop: 512
+
+# Training-related
+fast_tr: False  # for overfitting on one batch (useful for debugging)
+ckpt_path: 
+
+# When instanciating the separator
+load_pretrained_sources: True
+
+# Evaluation
+parallel_cpu: false
+only_append_res: false
+
+# Inference parameters
+max_len:
+offset:
+rec_dir:
+model_dir: bsrnn-opt
+
+# Hydra-related
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
