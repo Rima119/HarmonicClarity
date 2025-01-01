@@ -65,8 +65,6 @@ We assess the performance of our models using the following metrics:
 - `clarity/`: Code and configurations for the Hybrid Demucs model.
 - `ConvTasNet/`: Code for the ConvTasNet model.
 - `bsrnn/`: Implementation of the BandSplitRNN model.
-- `data/`: Scripts for loading and preprocessing datasets.
-- `evaluation/`: Metrics and evaluation scripts.
 
 ---
 
